@@ -18,7 +18,7 @@ const BottomNavigation: React.FC<BottomNavigationProps> = ({
   nextLabel = 'Next'
 }) => {
   return (
-    <div className="fixed bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900 to-transparent">
+    <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900 to-transparent z-10">
       <div className="flex justify-between items-center max-w-md mx-auto">
         <Button
           variant="ghost"
@@ -46,7 +46,7 @@ const BottomNavigation: React.FC<BottomNavigationProps> = ({
           variant="ghost"
           size="sm"
           onClick={onNext}
-          disabled={currentScreen === totalScreens - 1}
+          disabled={currentScreen === totalScreens - 1 || currentScreen === 2}
           className="text-slate-300 hover:text-white disabled:opacity-30"
         >
           {nextLabel}
