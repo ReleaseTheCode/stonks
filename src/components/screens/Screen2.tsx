@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
+import React, { useState, useEffect } from 'react';
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import { Slider } from '../ui/slider';
 
 interface PortfolioData {
@@ -13,14 +13,12 @@ interface Screen2Props {
   onPortfolioChange: (portfolio: PortfolioData[]) => void;
 }
 
-const Screen2: React.FC<Screen2Props> = ({ onPortfolioChange }) => {
-  const [portfolio, setPortfolio] = useState<PortfolioData[]>([
-    { name: 'Meta', symbol: 'META', color: '#1877F2', value: 20 },
-    { name: 'Apple', symbol: 'AAPL', color: '#007AFF', value: 20 },
-    { name: 'Amazon', symbol: 'AMZN', color: '#FF9500', value: 20 },
-    { name: 'Netflix', symbol: 'NFLX', color: '#E50914', value: 20 },
-    { name: 'Google', symbol: 'GOOGL', color: '#34A853', value: 20 },
-  ]);
+const Screen2: React.FC<Screen2Props> = ({ MainPortfolio, onPortfolioChange }) => {
+  const [portfolio, setPortfolio] = useState<PortfolioData[]>(MainPortfolio);
+
+  useEffect(() => {
+    onPortfolioChange(portfolio);
+  }, [])
 
   const handleSliderChange = (index: number, newValue: number[]) => {
     const updatedPortfolio = [...portfolio];

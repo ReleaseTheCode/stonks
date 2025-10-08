@@ -29,10 +29,7 @@ const Screen3: React.FC<Screen3Props> = ({ portfolio, onRebalance }) => {
   // Mock stock prices
   const stockPrices = {
     META: 450.25,
-    AAPL: 175.80,
-    AMZN: 145.60,
-    NFLX: 425.90,
-    GOOGL: 138.45,
+    AAPL: 175.80
   };
 
   useEffect(() => {

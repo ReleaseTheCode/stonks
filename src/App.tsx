@@ -24,11 +24,8 @@ interface CompanyData extends PortfolioData {
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState(0);
   const [portfolio, setPortfolio] = useState<PortfolioData[]>([
-    { name: 'Meta', symbol: 'META', color: '#1877F2', value: 20 },
-    { name: 'Apple', symbol: 'AAPL', color: '#007AFF', value: 20 },
-    { name: 'Amazon', symbol: 'AMZN', color: '#FF9500', value: 20 },
-    { name: 'Netflix', symbol: 'NFLX', color: '#E50914', value: 20 },
-    { name: 'Google', symbol: 'GOOGL', color: '#34A853', value: 20 },
+    { name: 'Meta', symbol: 'META', color: '#1877F2', value: 50 },
+    { name: 'Apple', symbol: 'AAPL', color: '#007AFF', value: 50 }
   ]);
   const [rebalancedPortfolio, setRebalancedPortfolio] = useState<CompanyData[]>([]);
 

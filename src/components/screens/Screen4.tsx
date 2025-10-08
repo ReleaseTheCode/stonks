@@ -43,14 +43,14 @@ const Screen4: React.FC<Screen4Props> = ({ rebalancedPortfolio }) => {
           <CheckCircle className="w-8 h-8 text-green-400 mr-3" />
           <h1 className="text-white">Portfolio Rebalanced</h1>
         </div>
-        <p className="text-slate-300 text-sm">Your optimized FAANG portfolio is ready</p>
+        <p className="text-slate-300 text-sm">Your optimized portfolio is ready</p>
       </div>
       
       <div className="w-full max-w-sm mx-auto mb-6">
         <ResponsiveContainer width="100%" height={250}>
           <PieChart>
             <Pie
-              data={portfolioWithActual}
+              data={rebalancedPortfolio}
               cx="50%"
               cy="50%"
               outerRadius={100}
@@ -81,7 +81,7 @@ const Screen4: React.FC<Screen4Props> = ({ rebalancedPortfolio }) => {
       </div>
       
       <div className="space-y-3 mb-6">
-        {portfolioWithActual.map((company) => (
+        {rebalancedPortfolio.map((company) => (
           <div key={company.symbol} className="p-4 rounded-lg bg-slate-800/50 backdrop-blur-sm">
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center space-x-3">
@@ -95,7 +95,7 @@ const Screen4: React.FC<Screen4Props> = ({ rebalancedPortfolio }) => {
                 </div>
               </div>
               <div className="text-right">
-                <p className="text-white text-sm">{company.actualPercentage.toFixed(1)}%</p>
+                <p className="text-white text-sm">{company.value.toFixed(2)}%</p>
                 <p className="text-slate-400 text-xs">{company.targetShares} shares</p>
               </div>
             </div>
