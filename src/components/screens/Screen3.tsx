@@ -74,13 +74,13 @@ const Screen3: React.FC<Screen3Props> = ({ portfolio, onRebalance }) => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen p-6 relative z-10 pb-24">
+    <div className="flex flex-col min-h-screen p-6 relative">
       <div className="text-center mb-8">
         <h1 className="text-white mb-4">Rebalancing Plan</h1>
         <p className="text-slate-300 text-sm">Review your portfolio adjustments</p>
       </div>
 
-      <div className="mb-6">
+      {/* <div className="mb-6">
         <label className="block text-slate-300 text-sm mb-2">Total Budget</label>
         <Input
           type="number"
@@ -89,7 +89,7 @@ const Screen3: React.FC<Screen3Props> = ({ portfolio, onRebalance }) => {
           className="bg-slate-800/50 border-slate-600 text-white"
           placeholder="Enter your budget"
         />
-      </div>
+      </div> */}
 
       <div className="space-y-4 mb-6">
         {companies.map((company) => (
