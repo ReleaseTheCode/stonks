@@ -65,9 +65,9 @@ export default function App() {
   const renderScreen = () => {
     switch (currentScreen) {
       case 0:
-        return <Screen1 />;
+        return <Screen1 MainPortfolio={portfolio} />;
       case 1:
-        return <Screen2 onPortfolioChange={handlePortfolioChange} />;
+        return <Screen2 MainPortfolio={portfolio} onPortfolioChange={handlePortfolioChange} />;
       case 2:
         return <Screen3 portfolio={portfolio} onRebalance={handleRebalance} />;
       case 3:
@@ -80,8 +80,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-900 text-white relative overflow-hidden">
       <StarBackground />
-      
-      <main className="relative z-10">
+      <main className="relative z-1">
         {renderScreen()}
       </main>
       
