@@ -31,6 +31,7 @@ const Screen1: React.FC<Screen1Props> = ({ MainPortfolio }) => {
               innerRadius={40}
               paddingAngle={5}
               dataKey="value"
+              label={({ symbol, percent }) => `${symbol}: ${(percent * 100).toFixed(2)}%`}
             >
               {MainPortfolio.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={entry.color} />
