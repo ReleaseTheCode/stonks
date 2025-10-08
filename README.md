@@ -1,3 +1,4 @@
+![alt text](https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2021/04/stonks-2286073.jpg?tf=3840x)
 
   # Portfolio App Design
 
