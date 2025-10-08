@@ -10,6 +10,7 @@ interface PortfolioData {
 }
 
 interface Screen2Props {
+  MainPortfolio: PortfolioData[];
   onPortfolioChange: (portfolio: PortfolioData[]) => void;
 }
 
@@ -19,7 +20,7 @@ const Screen2: React.FC<Screen2Props> = ({ MainPortfolio, onPortfolioChange }) =
   useEffect(() => {
     onPortfolioChange(portfolio);
   }, [])
-
+  
   const handleSliderChange = (index: number, newValue: number[]) => {
     const updatedPortfolio = [...portfolio];
     const oldValue = updatedPortfolio[index].value;
@@ -71,18 +72,20 @@ const Screen2: React.FC<Screen2Props> = ({ MainPortfolio, onPortfolioChange }) =
               innerRadius={40}
               paddingAngle={5}
               dataKey="value"
+              label={({ symbol, percent }) => `${symbol}: ${(percent * 100).toFixed(2)}%`}
             >
               {portfolio.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={entry.color} />
               ))}
             </Pie>
+            
           </PieChart>
         </ResponsiveContainer>
       </div>
       
-      <div className="w-full max-w-sm space-y-6">
+      <div className="w-full max-w-sm space-y-2">
         {portfolio.map((company, index) => (
-          <div key={company.symbol} className="p-4 rounded-lg bg-slate-800/50 backdrop-blur-sm">
+          <div key={company.symbol} className="p-4 rounded-lg bg-slate-900 backdrop-blur-sm">
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center space-x-3">
                 <div
