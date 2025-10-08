@@ -108,15 +108,6 @@ const Screen4: React.FC<Screen4Props> = ({ rebalancedPortfolio }) => {
           </div>
         ))}
       </div>
-
-      <div className="space-y-3">
-        <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
-          Execute Rebalancing
-        </Button>
-        <Button variant="outline" className="w-full border-slate-600 text-slate-300 hover:bg-slate-800">
-          Export Portfolio
-        </Button>
-      </div>
     </div>
   );
 };
