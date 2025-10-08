@@ -27,9 +27,9 @@ const Screen1: React.FC<Screen1Props> = ({ MainPortfolio }) => {
               data={MainPortfolio}
               cx="50%"
               cy="50%"
-              outerRadius={120}
-              innerRadius={60}
-              paddingAngle={2}
+              outerRadius={60}
+              innerRadius={40}
+              paddingAngle={5}
               dataKey="value"
             >
               {MainPortfolio.map((entry, index) => (

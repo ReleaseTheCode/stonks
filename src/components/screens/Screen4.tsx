@@ -53,10 +53,11 @@ const Screen4: React.FC<Screen4Props> = ({ rebalancedPortfolio }) => {
               data={rebalancedPortfolio}
               cx="50%"
               cy="50%"
-              outerRadius={100}
-              innerRadius={50}
-              paddingAngle={2}
-              dataKey="actualPercentage"
+              outerRadius={60}
+              innerRadius={40}
+              paddingAngle={5}
+              dataKey="value"
+              label={({ symbol, value }) => `${symbol}: ${(value).toFixed(2)}%`}
             >
               {portfolioWithActual.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={entry.color} />

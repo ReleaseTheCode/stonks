@@ -67,9 +67,9 @@ const Screen2: React.FC<Screen2Props> = ({ MainPortfolio, onPortfolioChange }) =
               data={portfolio}
               cx="50%"
               cy="50%"
-              outerRadius={100}
-              innerRadius={50}
-              paddingAngle={2}
+              outerRadius={60}
+              innerRadius={40}
+              paddingAngle={5}
               dataKey="value"
             >
               {portfolio.map((entry, index) => (

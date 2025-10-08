@@ -34,7 +34,7 @@ const Screen3: React.FC<Screen3Props> = ({ portfolio, onRebalance }) => {
 
   useEffect(() => {
     const initialShares = {
-      META: 11, AAPL: 28, AMZN: 34, NFLX: 12, GOOGL: 36
+      META: 11, AAPL: 28
     };
 
     const companiesData: CompanyData[] = portfolio.map(company => {
